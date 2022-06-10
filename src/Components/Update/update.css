@@ -1,0 +1,84 @@
+.update {
+  flex: 6;
+  margin: 15px;
+  padding: 15px;
+}
+
+.updateTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 10px;
+}
+
+.title1 {
+  font-size: 42px;
+  color: rgb(85, 154, 229);
+  cursor: pointer;
+}
+
+.title2 {
+  font-size: 20px;
+  color: rgb(189, 90, 68);
+  cursor: pointer;
+}
+
+.updateForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.updatePPContainer {
+  display: flex;
+  align-items: center;
+}
+.updateProfile {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.updateIcon {
+  background-color: rgb(103, 103, 208);
+  padding: 7px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.updateForm > label {
+  margin-top: 50px;
+  font-size: 28px;
+}
+.updateForm > input {
+  background-color: rgb(5, 5, 6);
+  border: none;
+  border-bottom: 1px solid cyan;
+  height: 20px;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.updateForm > input:focus {
+  outline: none;
+}
+
+.updateSubmit {
+  padding: 10px;
+  color: white;
+  background-color: rgb(2, 12, 73);
+  border-radius: 20px;
+  width: 150px;
+  margin-top: 20px;
+  align-self: center;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.updateSubmit:hover {
+  background-color: blueviolet;
+}

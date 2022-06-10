@@ -1,0 +1,9 @@
+.posts {
+  flex: 6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+}
+.post {
+  background-color: black;
+}

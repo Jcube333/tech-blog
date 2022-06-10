@@ -1,0 +1,39 @@
+.header {
+  margin-top: 50px;
+}
+
+.headerTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.smallTitle {
+  font-size: 30px;
+  position: absolute;
+  top: 15%;
+}
+
+.bigTitle {
+  font-size: 100px;
+  position: absolute;
+  top: 19%;
+}
+
+.homeImg {
+  height: 480px;
+  width: 90%;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 130px;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
