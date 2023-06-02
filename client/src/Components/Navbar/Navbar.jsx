@@ -3,7 +3,7 @@ import profile from "./Jaimin.jpeg";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  let user = false;
+  let user = true;
   return (
     <div className="Navbar">
       <div className="leftNav">

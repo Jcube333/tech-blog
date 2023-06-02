@@ -9,19 +9,19 @@ import Registerpage from "./Components/pages/Registerpage/Registerpage.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
-  const user = false;
+  const user = true;
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={user ? <Home /> : <Registerpage />} />
 
         <Route path="/register" element={user ? <Home /> : <Registerpage />} />
         <Route path="/login" element={user ? <Home /> : <Loginpage />} />
-        <Route path="/write" element={user ? <Writepage /> : <Writepage />} />
+        <Route path="/write" element={user ? <Writepage /> : <Loginpage />} />
         <Route
           path="/settings"
-          element={user ? <Updatepage /> : <Updatepage />}
+          element={user ? <Updatepage /> : <Loginpage />}
         />
         <Route path="/post/:postId" element={<Singlepage />} />
       </Routes>
