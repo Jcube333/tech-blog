@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.title2:hover{
+  color: rgb(246, 49, 5);
+}
+
 .updateForm {
   display: flex;
   flex-direction: column;

@@ -65,3 +65,7 @@
   border-radius: 15px;
   cursor: pointer;
 }
+
+.writeSubmit:hover{
+  background-color: rgb(61, 244, 244);
+}

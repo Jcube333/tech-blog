@@ -2,10 +2,13 @@
   flex: 6;
   padding: 30px;
   padding-right: 0;
+    display: flex;
+  flex-direction: column;
 }
 
 .pseudo {
   flex: 3;
+
 }
 
 .singleImg {
@@ -29,6 +32,24 @@
   flex: 20;
 }
 
+.singlePostTitleUpdate{
+   text-align: center;
+  font-size: 38px;
+  font-family: "Varela", sans-serif;
+  margin: 10px;
+  flex: 20;
+  background-color: inherit;
+  color: white;
+  outline: none;
+  border: 1px solid grey;
+
+}
+
+.singlePostTitleUpdate:focus{
+ border: none;
+  border-bottom: 1px solid rgb(45, 119, 240);
+}
+
 .singlePostInfo {
   display: flex;
   align-items: center;
@@ -43,6 +64,7 @@
 .singlePostIcons {
   font-size: 18px;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .singlePostIcons:first-child {
@@ -64,4 +86,35 @@
   margin-left: 20px;
   font-size: 50px;
   font-weight: 600;
+}
+
+.singlePostDescUpdate{
+  background-color: inherit;
+   line-height: 30px;
+  padding: 20px;
+  color: rgb(203, 197, 211);
+  font-size: 18px;
+  text-align: left;
+}
+
+.singlePostDescUpdate:focus{
+outline:none;
+ border:1px solid orange;
+}
+
+.submitBtn{
+  width: 100px;
+  background-color: teal;
+  padding: 6px 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.submitBtn:hover{
+  background-color: rgb(19, 210, 210);
 }

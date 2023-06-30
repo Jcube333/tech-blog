@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import profile from "./Jaimin.jpeg";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-export default function sidebar() {
+export default function Sidebar() {
+  const [cat, setCat] = useState([]);
+
+  useEffect(() => {
+    const fetchCats = async () => {
+      const res = await axios.get("/categories");
+
+      setCat(res.data);
+    };
+
+    fetchCats();
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebarContainer">
         <span className="sidebarTitle">ABOUT</span>
-        <img className="sideImage" src={profile}></img>
+        <img className="sideImage" src={profile} alt="User Profile"></img>
         <p className="sidebarDesc">
           Hello, I'm Jaimin, A tech enthusiast who likes to write about the
           latest emerging technologies. My fields of expertise are AI and ML.
@@ -16,12 +30,17 @@ export default function sidebar() {
       <div className="sidebarContainer">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          <li className="sidebarListItems">Artificial Intelligence</li>
-          <li className="sidebarListItems">Machine Learning</li>
-          <li className="sidebarListItems">Embedded Systems</li>
-          <li className="sidebarListItems">Cryptography</li>
-          <li className="sidebarListItems">Cpp</li>
-          <li className="sidebarListItems">App Development</li>
+          {cat.map((c) => {
+            {
+              return (
+                c.name && (
+                  <Link key={c._id} to={`/?cat=${c.name}`} className="btnLink">
+                    <li className="sidebarListItems">{c.name}</li>
+                  </Link>
+                )
+              );
+            }
+          })}
         </ul>
       </div>
 

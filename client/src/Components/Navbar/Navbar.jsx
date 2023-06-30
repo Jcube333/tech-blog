@@ -1,9 +1,21 @@
 import "./Navbar.css";
 import profile from "./Jaimin.jpeg";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Context } from "../../context/Context";
 
 export default function Navbar() {
-  let user = true;
+  const { user, dispatch } = useContext(Context);
+  const [pic,setPic]=useState(user? localStorage.getItem("profilePic"):null);
+  const PF="http://localhost:3000/images/"
+
+  const logoutHandler = () => {
+    dispatch({ type: "LOGOUT" });
+    localStorage.setItem("jwtToken", null);
+    localStorage.setItem("profilePic", null);
+
+    
+  };
   return (
     <div className="Navbar">
       <div className="leftNav">
@@ -19,11 +31,7 @@ export default function Navbar() {
               Home
             </Link>
           </li>
-          <li className="navItems">
-            <Link className="link" to="/settings">
-              Settings
-            </Link>
-          </li>
+         
           <li className="navItems">
             <Link className="link" to="/">
               Contact
@@ -34,12 +42,19 @@ export default function Navbar() {
               Write
             </Link>
           </li>
-          <li className="navItems">{user && "Logout"}</li>
+          <li className="navItems logout" onClick={logoutHandler}>
+            {user && "Logout"}
+          </li>
         </ul>
       </div>
       <div className="rightNav">
         {user ? (
-          <img className="navImage" src={profile}></img>
+          <Link to="/settings">
+            <img
+            className="navImage"
+            src={user && (PF+pic)}
+          ></img>
+          </Link>
         ) : (
           <ul className="navList">
             <li className="navItems">

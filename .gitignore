@@ -2,6 +2,7 @@
 config
 *.env
 node-modules
+Server/images/*
 
 # dependencies
 /node_modules
@@ -60,3 +61,4 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
+

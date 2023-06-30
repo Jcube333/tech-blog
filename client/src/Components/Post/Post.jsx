@@ -3,27 +3,27 @@ import "./post.css";
 import postImg from "./Ai.jpg";
 import { Link } from "react-router-dom";
 
-export default function post() {
+export default function Post({ post })
+ {
+
+  const PF="http://localhost:3000/images/"
   return (
     <div className="post">
-      <Link className="btnLink" to="/post/:postId">
-        <img src={postImg} className="postImg"></img>
+      <Link className="btnLink" to={`/post/${post._id}`}>
+        <img src={PF + post.banner} className="postImg"></img>
         <div className="postInfo">
           <div className="postTags">
-            <span>AI</span>
-            <span>ML</span>
+            {post.tags.map((tag, ind) => (
+              <span key={ind}>{tag}</span>
+            ))}
           </div>
-          <span className="postTitle">AI in modern World</span>
-          <span class="postTime">1 hr ago</span>
+          <span className="postTitle">{post.title}</span>
+          <span className="postTime">
+            {new Date(post.createdAt).toDateString()}
+          </span>
 
           <hr className="separator"></hr>
-          <span className="postDesc">
-            Artificial intelligence (AI) makes it possible for machines to learn
-            from experience, adjust to new inputs and perform human-like tasks.
-            Most AI examples that you hear about today - from chess-playing
-            computers to self-driving cars - rely heavily on deep learning and
-            natural language processing.
-          </span>
+          <span className="postDesc">{post.desc}</span>
         </div>
       </Link>
     </div>

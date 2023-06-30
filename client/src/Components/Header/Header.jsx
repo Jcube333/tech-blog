@@ -7,7 +7,7 @@ export default function Header() {
     <div className="header">
       <div className="headerTitles">
         <span className="smallTitle">Techs & Hacks for</span>
-        <span class="bigTitle">Techies!</span>
+        <span className="bigTitle">Techies!</span>
       </div>
       <div className="imgContainer">
         <img className="homeImg" src={homeImg}></img>
