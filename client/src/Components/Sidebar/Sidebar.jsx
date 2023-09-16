@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./sidebar.css";
-import profile from "./Jaimin.jpeg";
+import profile from "./Avatar.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
